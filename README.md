@@ -2,27 +2,21 @@
 
 A minimal colorscheme for Vim that only puts emphasis on the paramount.
 
-## Screenshots
+## Install via Pathogen
 
-*Fira Code* font on light and dark backgrounds, with Ruby code from
-[VimColors](vimcolors.com/438/paramount/dark):
-
-![](screenshots/light.png)
-![](screenshots/dark.png)
-
-## Installation
-
-Copy the color scheme file to your `~/.vim/colors` directory, or use a plugin
-manager like [Plug][] or [Vundle][] and add `"owickstrom/vim-colors-paramount"`
-as a plugin.
-
-[vundle]: https://github.com/gmarik/Vundle.vim
-[plug]: https://github.com/junegunn/vim-plug
+```
+cd ~/.vim/bundle
+git clone https://github.com/levelone/vim-colors-paramount.git
+```
 
 ## Usage
 
 ```
-:colorscheme paramount
+:colorscheme paramount-gray-green
+
+# or
+
+:colorscheme paramount-purple-cyan
 ```
 
 Supports both `background=light` and `background=dark`.

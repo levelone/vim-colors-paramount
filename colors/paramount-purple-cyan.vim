@@ -17,7 +17,7 @@ if exists('syntax on')
     syntax reset
 endif
 
-let g:colors_name='paramount'
+let g:colors_name='paramount-purple-cyan'
 
 let s:black           = { "gui": "#000000", "cterm": "232" }
 let s:medium_gray     = { "gui": "#767676", "cterm": "243" }
@@ -30,11 +30,11 @@ let s:light_gray      = { "gui": "#A8A8A8", "cterm": "248" }
 let s:lighter_gray    = { "gui": "#C6C6C6", "cterm": "251" }
 let s:lightest_gray   = { "gui": "#EEEEEE", "cterm": "255" }
 let s:pink            = { "gui": "#fb007a", "cterm": "9"   }
-let s:dark_red        = { "gui": "#C30771", "cterm": "1"   }
-let s:light_red       = { "gui": "#E32791", "cterm": "1"   }
+let s:dark_red        = { "gui": "#C30771", "cterm": "124" }
+let s:light_red       = { "gui": "#E32791", "cterm": "160" }
 let s:orange          = { "gui": "#D75F5F", "cterm": "167" }
 let s:darker_blue     = { "gui": "#005F87", "cterm": "18"  }
-let s:dark_blue       = { "gui": "#008EC4", "cterm": "32"   }
+let s:dark_blue       = { "gui": "#008EC4", "cterm": "32"  }
 let s:blue            = { "gui": "#20BBFC", "cterm": "12"  }
 let s:light_blue      = { "gui": "#b6d6fd", "cterm": "153" }
 let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
@@ -44,7 +44,7 @@ let s:light_green     = { "gui": "#5FD7A7", "cterm": "10"  }
 let s:dark_purple     = { "gui": "#af5fd7", "cterm": "134" }
 let s:light_purple    = { "gui": "#a790d5", "cterm": "140" }
 let s:yellow          = { "gui": "#F3E430", "cterm": "11"  }
-let s:light_yellow    = { "gui": "#ffff87", "cterm": "228"   }
+let s:light_yellow    = { "gui": "#ffff87", "cterm": "228" }
 let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
 
 let s:background = &background
@@ -59,7 +59,7 @@ if &background == "dark"
   let s:cyan            = s:light_cyan
   let s:green           = s:light_green
   let s:red             = s:light_red
-  let s:visual          = s:light_purple
+  let s:visual          = s:medium_gray
   let s:yellow          = s:light_yellow
 else
   let s:bg              = s:actual_white
@@ -97,18 +97,17 @@ endif
 call s:h("Cursor",        {"bg": s:purple, "fg": s:norm })
 call s:h("Comment",       {"fg": s:bg_subtle, "gui": "italic"})
 
-call s:h("Constant",      {"fg": s:purple})
+call s:h("Constant",      {"fg": s:dark_cyan})
 hi! link Character        Constant
 hi! link Number           Constant
 hi! link Boolean          Constant
 hi! link Float            Constant
 hi! link String           Constant
 
-"call s:h("Identifier",    {"fg": s:dark_blue})
 hi! link Identifier       Normal
-hi! link Function         Identifier
+hi! link Function         Normal
 
-call s:h("Statement",     {"fg": s:norm_subtle})
+call s:h("Statement",     {"fg": s:purple})
 hi! link Conditonal       Statement
 hi! link Repeat           Statement
 hi! link Label            Statement
@@ -117,7 +116,7 @@ hi! link Exception        Statement
 
 call s:h("Operator",      {"fg": s:norm, "cterm": "bold", "gui": "bold"})
 
-call s:h("PreProc",     {"fg": s:norm_subtle})
+call s:h("PreProc",       {"fg": s:purple})
 hi! link Include          PreProc
 hi! link Define           PreProc
 hi! link Macro            PreProc
@@ -137,12 +136,12 @@ hi! link Debug            Special
 
 call s:h("Underlined",    {"fg": s:norm, "gui": "underline", "cterm": "underline"})
 call s:h("Ignore",        {"fg": s:bg})
-call s:h("Error",         {"fg": s:actual_white, "bg": s:red, "cterm": "bold"})
-call s:h("Todo",          {"fg": s:purple, "gui": "underline", "cterm": "underline"})
-call s:h("SpecialKey",    {"fg": s:light_green})
+call s:h("Error",         {"fg": s:actual_white, "bg": s:medium_gray, "cterm": "bold"})
+call s:h("Todo",          {"fg": s:dark_cyan, "gui": "underline", "cterm": "underline"})
+call s:h("SpecialKey",    {"fg": s:medium_gray})
 call s:h("NonText",       {"fg": s:medium_gray})
-call s:h("Directory",     {"fg": s:dark_blue})
-call s:h("ErrorMsg",      {"fg": s:red})
+call s:h("Directory",     {"fg": s:norm})
+call s:h("ErrorMsg",      {"fg": s:norm})
 call s:h("IncSearch",     {"bg": s:yellow, "fg": s:light_black})
 call s:h("Search",        {"bg": s:light_green, "fg": s:light_black})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
@@ -153,10 +152,10 @@ call s:h("Question",      {"fg": s:red})
 call s:h("StatusLine",    {"bg": s:bg_very_subtle})
 call s:h("StatusLineNC",  {"bg": s:bg_very_subtle, "fg": s:medium_gray})
 call s:h("VertSplit",     {"bg": s:bg_very_subtle, "fg": s:bg_very_subtle})
-call s:h("Title",         {"fg": s:dark_blue})
+call s:h("Title",         {"fg": s:dark_cyan})
 call s:h("Visual",        {"fg": s:norm, "bg": s:visual})
 call s:h("VisualNOS",     {"bg": s:bg_subtle})
-call s:h("WarningMsg",    {"fg": s:yellow})
+call s:h("WarningMsg",    {"fg": s:norm})
 call s:h("WildMenu",      {"fg": s:bg, "bg": s:norm})
 call s:h("Folded",        {"fg": s:medium_gray})
 call s:h("FoldColumn",    {"fg": s:bg_subtle})
