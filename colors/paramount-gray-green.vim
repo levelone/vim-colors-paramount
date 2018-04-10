@@ -14,7 +14,7 @@
 hi clear
 
 if exists('syntax on')
-    syntax reset
+  syntax reset
 endif
 
 let g:colors_name='paramount-gray-green'
@@ -33,7 +33,7 @@ let s:pink            = { "gui": "#fb007a", "cterm": "9"   }
 let s:dark_pink       = { "gui": "#FF6563", "cterm": "203" }
 let s:dark_red        = { "gui": "#C30771", "cterm": "124" }
 let s:light_red       = { "gui": "#E32791", "cterm": "160" }
-let s:orange          = { "gui": "#D75F5F", "cterm": "96" }
+let s:orange          = { "gui": "#D75F5F", "cterm": "96"  }
 let s:darker_blue     = { "gui": "#005F87", "cterm": "18"  }
 let s:dark_blue       = { "gui": "#008EC4", "cterm": "32"  }
 let s:blue            = { "gui": "#20BBFC", "cterm": "12"  }
@@ -149,11 +149,11 @@ call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
 hi! link ModeMsg MoreMsg
 call s:h("LineNr",        {"fg": s:bg_subtle})
 call s:h("CursorLineNr",  {"fg": s:purple, "bg": s:bg_very_subtle})
-call s:h("Question",      {"fg": s:red})
+call s:h("Question",      {"fg": s:light_green})
 call s:h("StatusLine",    {"bg": s:bg_very_subtle})
 call s:h("StatusLineNC",  {"bg": s:bg_very_subtle, "fg": s:medium_gray})
 call s:h("VertSplit",     {"bg": s:bg_very_subtle, "fg": s:bg_very_subtle})
-call s:h("Title",         {"fg": s:dark_cyan})
+call s:h("Title",         {"fg": s:light_green})
 call s:h("Visual",        {"fg": s:norm, "bg": s:visual})
 call s:h("VisualNOS",     {"bg": s:bg_subtle})
 call s:h("WarningMsg",    {"fg": s:norm})
@@ -222,3 +222,11 @@ hi link GitGutterAdd                LineNr
 hi link GitGutterDelete             LineNr
 hi link GitGutterChange             LineNr
 hi link GitGutterChangeDelete       LineNr
+
+" Easy Motion
+call s:h("EasyMotionTarget",        {"fg": s:light_green})
+call s:h("EasyMotionShade",         {"fg": s:medium_gray})
+hi link EasyMotionShade           EasyMotionShade
+hi link EasyMotionTarget          EasyMotionTarget
+hi link EasyMotionTarget2First    EasyMotionTarget
+hi link EasyMotionTarget2Second   EasyMotionTarget
