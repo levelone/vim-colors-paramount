@@ -54,7 +54,7 @@ if &background == "dark"
   let s:bg              = s:black
   let s:bg_subtle       = s:lighter_black
   let s:bg_very_subtle  = s:subtle_black
-  let s:norm            = s:lighter_gray
+  let s:norm            = s:lightest_gray
   let s:norm_subtle     = s:medium_gray
   let s:purple          = s:light_purple
   let s:cyan            = s:light_cyan
@@ -105,25 +105,24 @@ hi! link Boolean          Constant
 hi! link Float            Constant
 hi! link String           Constant
 
-hi! link Identifier       Normal
-hi! link Function         Normal
-
-call s:h("Statement",     {"fg": s:medium_gray})
+call s:h("Statement",     {"fg": s:lighter_black})
 hi! link Conditonal       Statement
 hi! link Repeat           Statement
 hi! link Label            Statement
 hi! link Keyword          Statement
 hi! link Exception        Statement
 
-call s:h("Operator",      {"fg": s:norm, "cterm": "bold", "gui": "bold"})
+call s:h("Operator",      {"fg": s:light_gray, "cterm": "bold", "gui": "bold"})
+hi! link Identifier       Operator
+hi! link Function         Operator
 
-call s:h("PreProc",       {"fg": s:medium_gray})
+call s:h("PreProc",       {"fg": s:lighter_black})
 hi! link Include          PreProc
 hi! link Define           PreProc
 hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
-call s:h("Type",          {"fg": s:norm})
+call s:h("Type",          {"fg": s:light_blue})
 hi! link StorageClass     Type
 hi! link Structure        Type
 hi! link Typedef          Type
@@ -141,10 +140,10 @@ call s:h("Error",         {"fg": s:actual_white, "bg": s:medium_gray, "cterm": "
 call s:h("Todo",          {"fg": s:light_green, "gui": "underline", "cterm": "underline"})
 call s:h("SpecialKey",    {"fg": s:medium_gray})
 call s:h("NonText",       {"fg": s:medium_gray})
-call s:h("Directory",     {"fg": s:medium_gray})
+call s:h("Directory",     {"fg": s:light_gray})
 call s:h("ErrorMsg",      {"fg": s:norm})
 call s:h("IncSearch",     {"bg": s:yellow, "fg": s:light_black})
-call s:h("Search",        {"bg": s:light_green, "fg": s:light_black})
+call s:h("Search",        {"fg": s:yellow, "gui": "underline", "cterm": "underline"})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
 hi! link ModeMsg MoreMsg
 call s:h("LineNr",        {"fg": s:bg_subtle})
@@ -224,8 +223,8 @@ hi link GitGutterChange             LineNr
 hi link GitGutterChangeDelete       LineNr
 
 " Easy Motion
-call s:h("EasyMotionTarget",        {"fg": s:light_green})
-call s:h("EasyMotionShade",         {"fg": s:medium_gray})
+call s:h("EasyMotionTarget",      {"fg": s:light_green})
+call s:h("EasyMotionShade",       {"fg": s:bg_subtle})
 hi link EasyMotionShade           EasyMotionShade
 hi link EasyMotionTarget          EasyMotionTarget
 hi link EasyMotionTarget2First    EasyMotionTarget
