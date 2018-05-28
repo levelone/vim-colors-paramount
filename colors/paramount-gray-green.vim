@@ -112,7 +112,7 @@ hi! link Label            Statement
 hi! link Keyword          Statement
 hi! link Exception        Statement
 
-call s:h("Operator",      {"fg": s:light_gray, "cterm": "bold", "gui": "bold"})
+call s:h("Operator",      {"fg": s:light_blue})
 hi! link Identifier       Operator
 hi! link Function         Operator
 
