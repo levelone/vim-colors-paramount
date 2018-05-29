@@ -147,10 +147,7 @@ call s:h("Search",        {"fg": s:yellow, "gui": "underline", "cterm": "underli
 call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
 hi! link ModeMsg MoreMsg
 call s:h("LineNr",        {"fg": s:bg_subtle})
-call s:h("CursorLineNr",  {"fg": s:purple, "bg": s:bg_very_subtle})
 call s:h("Question",      {"fg": s:light_green})
-call s:h("StatusLine",    {"bg": s:bg_very_subtle})
-call s:h("StatusLineNC",  {"bg": s:bg_very_subtle, "fg": s:medium_gray})
 call s:h("VertSplit",     {"bg": s:bg_very_subtle, "fg": s:bg_very_subtle})
 call s:h("Title",         {"fg": s:light_green})
 call s:h("Visual",        {"fg": s:norm, "bg": s:visual})
@@ -185,9 +182,16 @@ call s:h("PmenuThumb",    {"fg": s:norm, "bg": s:bg_subtle})
 call s:h("TabLine",       {"fg": s:norm, "bg": s:bg_very_subtle})
 call s:h("TabLineSel",    {"fg": s:purple, "bg": s:bg_subtle, "gui": "bold", "cterm": "bold"})
 call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg_very_subtle})
-call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
+
+"CURSOR SETTINGS
+call s:h("CursorLineNr",  {"fg": s:bg_subtle})
 call s:h("CursorLine",    {"bg": s:bg_very_subtle})
-call s:h("ColorColumn",   {"bg": s:bg_subtle})
+call s:h("CursorColumn",  {"bg": s:bg_very_subtle})
+call s:h("ColorColumn",   {"bg": s:bg_very_subtle})
+
+"STATUS LINE SETTINGS
+call s:h("StatusLine",    {"bg": s:light_black, "fg": s:light_gray})
+call s:h("StatusLineNC",  {"bg": s:light_black, "fg": s:medium_gray})
 
 call s:h("MatchParen",    {"bg": s:bg_subtle, "fg": s:norm})
 call s:h("qfLineNr",      {"fg": s:medium_gray})
@@ -223,8 +227,8 @@ hi link GitGutterChange             LineNr
 hi link GitGutterChangeDelete       LineNr
 
 " Easy Motion
-call s:h("EasyMotionTarget",      {"fg": s:light_green})
-call s:h("EasyMotionShade",       {"fg": s:bg_subtle})
+call s:h("EasyMotionTarget",      {"fg": s:yellow})
+call s:h("EasyMotionShade",       {"fg": s:bg_very_subtle})
 hi link EasyMotionShade           EasyMotionShade
 hi link EasyMotionTarget          EasyMotionTarget
 hi link EasyMotionTarget2First    EasyMotionTarget
