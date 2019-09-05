@@ -99,14 +99,13 @@ if &background != s:background
    execute "set background=" . s:background
 endif
 
-call s:h("Cursor",        {"bg": s:light_green, "fg": s:norm })
-
 "https://justincypret.com/
 "--------
 
+call s:h("Cursor",        {"bg": s:light_green, "fg": s:norm })
 call s:h("Comment",       {"fg": s:bg_subtle})
 
-call s:h("Constant",      {"fg": s:light_blue})
+call s:h("Constant",      {"fg": s:light_purple})
 call s:h("String",        {"fg": s:light_yellow})
 call s:h("Character",     {"fg": s:light_purple})
 call s:h("Number",        {"fg": s:light_purple})
@@ -116,7 +115,7 @@ call s:h("Float",         {"fg": s:light_purple})
 call s:h("Identifier",    {"fg": s:light_blue})
 call s:h("Function",      {"fg": s:light_green})
 
-call s:h("Statement",     {"fg": s:light_orange})
+call s:h("Statement",     {"fg": s:lighter_orange})
 call s:h("Conditional",   {"fg": s:light_orange})
 call s:h("Repeat",        {"fg": s:light_orange})
 call s:h("Label",         {"fg": s:light_orange})
@@ -145,21 +144,25 @@ call s:h("Underlined",    {"fg": s:norm, "gui": "underline", "cterm": "underline
 call s:h("Ignore",        {"fg": s:bg})
 call s:h("Error",         {"fg": s:actual_white, "bg": s:medium_gray, "cterm": "bold"})
 call s:h("Todo",          {"fg": s:pink, "gui": "underline", "cterm": "underline"})
+
 call s:h("SpecialKey",    {"fg": s:medium_gray})
 call s:h("NonText",       {"fg": s:medium_gray})
-call s:h("Directory",     {"fg": s:light_gray})
+call s:h("Directory",     {"fg": s:light_green})
 call s:h("ErrorMsg",      {"fg": s:norm})
 call s:h("IncSearch",     {"bg": s:yellow, "fg": s:light_black})
 call s:h("Search",        {"fg": s:yellow, "gui": "underline", "cterm": "underline"})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
+
 hi! link ModeMsg MoreMsg
+
 call s:h("LineNr",        {"fg": s:bg_subtle})
 call s:h("Question",      {"fg": s:light_green})
 call s:h("VertSplit",     {"bg": s:bg_very_subtle, "fg": s:bg_very_subtle})
-call s:h("Title",         {"fg": s:light_green})
+call s:h("Title",         {"fg": s:light_blue})
 call s:h("Visual",        {"fg": s:norm, "bg": s:visual})
 call s:h("VisualNOS",     {"bg": s:bg_subtle})
 call s:h("WarningMsg",    {"fg": s:norm})
+
 call s:h("WildMenu",      {"fg": s:bg, "bg": s:norm})
 call s:h("Folded",        {"fg": s:medium_gray})
 call s:h("FoldColumn",    {"fg": s:bg_subtle})
