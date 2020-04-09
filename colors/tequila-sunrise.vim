@@ -3,14 +3,7 @@
 " Maintainer: github.com/levelone
 " License:    The MIT License (MIT)
 "
-" A minimal colorscheme for Vim that only puts emphasis on the paramount.
-"
-" Based on the pencil and off colorschemes:
-"
-" https://github.com/reedes/vim-colors-pencil
-" https://github.com/reedes/vim-colors-off
-" https://github.com/owickstrom/vim-colors-paramount
-"
+" A colorscheme that makes you want to work on the beach.
 "
 """
 hi clear
@@ -25,62 +18,42 @@ let s:black           = { "gui": "#000000", "cterm": "232" }
 let s:medium_gray     = { "gui": "#767676", "cterm": "243" }
 let s:white           = { "gui": "#F1F1F1", "cterm": "15"  }
 let s:actual_white    = { "gui": "#FFFFFF", "cterm": "231" }
-let s:subtle_black    = { "gui": "#303030", "cterm": "236" }
+let s:subtle_black    = { "gui": "#121212", "cterm": "233" }
 let s:light_black     = { "gui": "#262626", "cterm": "235" }
 let s:lighter_black   = { "gui": "#4E4E4E", "cterm": "239" }
 let s:light_gray      = { "gui": "#A8A8A8", "cterm": "248" }
-let s:lighter_gray    = { "gui": "#C6C6C6", "cterm": "251" }
 let s:lightest_gray   = { "gui": "#EEEEEE", "cterm": "255" }
-let s:pink            = { "gui": "#fb007a", "cterm": "9"   }
-let s:dark_pink       = { "gui": "#FF6563", "cterm": "203" }
-let s:dark_red        = { "gui": "#C30771", "cterm": "124" }
+let s:pink            = { "gui": "#FF0000", "cterm": "9"   }
 let s:light_red       = { "gui": "#E32791", "cterm": "160" }
-let s:orange          = { "gui": "#D75F5F", "cterm": "96"  }
-let s:light_orange    = { "gui": "#FFA500", "cterm": "215" }
-let s:lighter_orange  = { "gui": "#FFA500", "cterm": "209" }
+let s:light_orange    = { "gui": "#FFAF5F", "cterm": "215" }
+let s:lighter_orange  = { "gui": "#FF5F5F", "cterm": "203" }
 let s:darker_blue     = { "gui": "#005F87", "cterm": "18"  }
 let s:dark_blue       = { "gui": "#008EC4", "cterm": "32"  }
 let s:blue            = { "gui": "#20BBFC", "cterm": "12"  }
-let s:light_blue      = { "gui": "#b6d6fd", "cterm": "116" }
+let s:light_blue      = { "gui": "#87D7D7", "cterm": "116" }
 let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
 let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "14"  }
 let s:dark_green      = { "gui": "#10A778", "cterm": "2"   }
-let s:light_green     = { "gui": "#00E497", "cterm": "115" }
+let s:light_green     = { "gui": "#87D7AF", "cterm": "115" }
 let s:dark_purple     = { "gui": "#af5fd7", "cterm": "134" }
-let s:light_purple    = { "gui": "#a790d5", "cterm": "140" }
+let s:light_purple    = { "gui": "#af87d7", "cterm": "140" }
 let s:yellow          = { "gui": "#F3E430", "cterm": "11"  }
-let s:light_yellow    = { "gui": "#ffff87", "cterm": "228" }
+let s:light_yellow    = { "gui": "#FFFF87", "cterm": "228" }
 let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
 
-let s:background = &background
+set background=dark
+let s:bg              = s:subtle_black
+let s:bg_subtle       = s:lighter_black
+let s:bg_very_subtle  = s:light_black
+let s:norm            = s:lightest_gray
+let s:norm_subtle     = s:medium_gray
+let s:purple          = s:light_purple
+let s:cyan            = s:light_cyan
+let s:green           = s:light_green
+let s:red             = s:light_red
+let s:visual          = s:medium_gray
+let s:yellow          = s:light_yellow
 
-if &background == "dark"
-  let s:bg              = s:black
-  let s:bg_subtle       = s:lighter_black
-  let s:bg_very_subtle  = s:subtle_black
-  let s:norm            = s:lightest_gray
-  let s:norm_subtle     = s:medium_gray
-  let s:purple          = s:light_purple
-  let s:cyan            = s:light_cyan
-  let s:green           = s:light_green
-  let s:red             = s:light_red
-  let s:visual          = s:medium_gray
-  let s:yellow          = s:light_yellow
-else
-  let s:bg              = s:actual_white
-  let s:bg_subtle       = s:light_gray
-  let s:bg_very_subtle  = s:lightest_gray
-  let s:norm            = s:light_black
-  let s:norm_subtle     = s:medium_gray
-  let s:purple          = s:dark_purple
-  let s:cyan            = s:dark_cyan
-  let s:green           = s:dark_green
-  let s:red             = s:dark_red
-  let s:visual          = s:dark_purple
-  let s:yellow          = s:dark_yellow
-endif
-
-" https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
   execute "highlight" a:group
     \ "guifg="   (has_key(a:style, "fg")    ? a:style.fg.gui   : "NONE")
@@ -94,13 +67,9 @@ endfunction
 
 call s:h("Normal",        {"bg": s:bg, "fg": s:norm})
 
-" restore &background's value in case changing Normal changed &background (:help :hi-normal-cterm)
-if &background != s:background
-   execute "set background=" . s:background
-endif
-
-"https://justincypret.com/
-"--------
+" if &background != s:background
+"   execute "set background=" . s:background
+"endif
 
 call s:h("Cursor",        {"bg": s:light_green, "fg": s:norm })
 call s:h("Comment",       {"fg": s:bg_subtle})
@@ -143,7 +112,7 @@ call s:h("Debug",         {"fg": s:norm_subtle, "gui": "italic"})
 call s:h("Underlined",    {"fg": s:norm, "gui": "underline", "cterm": "underline"})
 call s:h("Ignore",        {"fg": s:bg})
 call s:h("Error",         {"fg": s:actual_white, "bg": s:medium_gray, "cterm": "bold"})
-call s:h("Todo",          {"fg": s:pink, "gui": "underline", "cterm": "underline"})
+call s:h("Todo",          {"fg": s:norm, "gui": "underline", "cterm": "underline"})
 
 call s:h("SpecialKey",    {"fg": s:medium_gray})
 call s:h("NonText",       {"fg": s:medium_gray})
